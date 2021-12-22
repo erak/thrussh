@@ -4,10 +4,10 @@ use async_trait::async_trait;
 use byteorder::{BigEndian, ByteOrder};
 use cryptovec::CryptoVec;
 use smol::io::{AsyncReadExt, AsyncWriteExt};
-use smol::net::unix::UnixStream;
+pub use smol::net::unix::UnixStream;
 
 #[cfg(not(unix))]
-use smol::net::TcpStream;
+pub use smol::net::TcpStream;
 
 use super::{AgentClient, ClientStream, Error};
 

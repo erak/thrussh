@@ -5,10 +5,10 @@ use byteorder::{BigEndian, ByteOrder};
 use cryptovec::CryptoVec;
 use tokio;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
-use tokio::net::UnixStream;
+pub use tokio::net::UnixStream;
 
 #[cfg(not(unix))]
-use toki::net::TcpStream;
+pub use toki::net::TcpStream;
 
 use super::{AgentClient, ClientStream, Error};
 
